@@ -1,0 +1,7 @@
+src-gen
+xtend-gen
+generated
+bin
+.gitignore
+/.metadata/
+/.recommenders/
