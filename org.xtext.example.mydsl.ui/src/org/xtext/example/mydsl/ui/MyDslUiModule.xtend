@@ -4,9 +4,11 @@
 package org.xtext.example.mydsl.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
-import org.eclipse.xtext.ui.editor.XtextEditor
 import org.eclipse.xtext.builder.EclipseSourceFolderProvider
 import org.eclipse.xtext.builder.JDTAwareSourceFolderProvider
+import org.eclipse.xtext.generator.LineSeparatorHarmonizer
+import org.eclipse.xtext.ui.editor.XtextEditor
+import org.eclipse.xtext.xbase.compiler.output.TraceAwarePostProcessor
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -19,6 +21,10 @@ class MyDslUiModule extends AbstractMyDslUiModule {
 	}
 	
 	def Class<? extends EclipseSourceFolderProvider> bindEclipseSourceFolderProvider() {
-		return JDTAwareSourceFolderProvider;
+		JDTAwareSourceFolderProvider;
+	}
+	
+	def Class<? extends LineSeparatorHarmonizer> bindLineSeparatorHarmonizer() {
+		TraceAwarePostProcessor;
 	}
 }
