@@ -5,6 +5,8 @@ package org.xtext.example.mydsl.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.eclipse.xtext.ui.editor.XtextEditor
+import org.eclipse.xtext.builder.EclipseSourceFolderProvider
+import org.eclipse.xtext.builder.JDTAwareSourceFolderProvider
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -14,5 +16,9 @@ class MyDslUiModule extends AbstractMyDslUiModule {
 	
 	def Class<? extends XtextEditor> bindXtextEditor() {
 		MyDslEditor
+	}
+	
+	def Class<? extends EclipseSourceFolderProvider> bindEclipseSourceFolderProvider() {
+		return JDTAwareSourceFolderProvider;
 	}
 }
